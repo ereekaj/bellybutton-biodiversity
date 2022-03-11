@@ -96,6 +96,68 @@ var barLayout = {
   title: "Top 10 Bacteria Cultures Found"
 };
 // // 10. Use Plotly to plot the data with the layout. 
-Plotly.newPlot("bar", barData, barLayout)                                                        
-    });
+Plotly.newPlot("bar", barData, barLayout)    
+
+//build bubble chart
+var bubbleData = {
+   x: sliceY, 
+   y: xValues,
+   text: hoverText, 
+   mode: 'markers', 
+   marker: {
+     color: sliceY, 
+     size: xValues,
+    //  sizeref: 0.1, 
+    //  sizemode: 'area'
+   }};
+
+// 2. Create the layout for the bubble chart.
+var bubbleLayout = {
+  title: " Bacteria Cultures Per Sample", 
+  xaxis: {title: "OTU ID"}, 
+  margin: {
+    l: 50, 
+    r: 50, 
+    b: 100, 
+    t: 100, 
+    pad: 4
+  },
+  showlegend: false, 
+  hovermode: 'closest'
+};
+
+// 3. Use Plotly to plot the data with the layout.
+Plotly.newPlot("bubble", [bubbleData], bubbleLayout); 
+
+// create gauge chart
+// Create a variable that holds the samples array. 
+  var sampleArray = data.metadata;
+  // Create a variable that filters the samples for the object with the desired sample number.
+
+  // 1. Create a variable that filters the metadata array for the object with the desired sample number.
+
+  // Create a variable that holds the first sample in the array.
+
+
+  // 2. Create a variable that holds the first sample in the metadata array.
+  
+
+  // Create variables that hold the otu_ids, otu_labels, and sample_values.
+
+
+  // 3. Create a variable that holds the washing frequency.
+  
+  // Create the yticks for the bar chart.
+var gaugeData = [{
+
+}];
+
+// 5. Create the layout for the gauge chart.
+var gaugeLayout = { 
+ 
+};
+
+// 6. Use Plotly to plot the gauge data and layout.
+Plotly.newPlot();
+  });
 }
